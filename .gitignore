@@ -1,0 +1,68 @@
+# MATLAB
+*.asv
+*.m.auto
+*.mex*
+*.p
+*.par
+*.slxc
+*.slxcinfo
+*.mexw64
+*.mexw32
+*.mexmaci
+*.mexmac
+*.mlappinstall
+*.mlapp
+
+# MATLAB project/reported files
+*.mlproj
+matlab.prj
+
+# MATLAB generated folders
+slprj/
+generated/
+
+# Simulink
+*.sldd
+
+# Matlab tag
+*.MATLABDriveTag
+
+# Coverage/Profiler
+coverage/
+.jprofiler/
+
+# OS files
+Thumbs.db
+Desktop.ini
+.DS_Store
+__MACOSX/
+
+# Windows temporary files
+~$*
+*.tmp
+*.log
+
+# Node / Python / general
+node_modules/
+venv/
+__pycache__/
+*.pyc
+
+# Editor settings
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Backup and swap files
+*~
+*.swp
+*.bak
+
+# Ignore data large files (uncomment if you want to ignore large datasets)
+# data/
+
+# Keep track: do not ignore source .m files or .mlx if they are part of the project
+# If you want to track .mlx live scripts, remove the *.mlx line above
