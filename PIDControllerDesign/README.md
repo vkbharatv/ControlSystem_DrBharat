@@ -84,11 +84,6 @@ Usage
 
 2. The script will plot step responses, Bode/margin plots, and Nyquist plots for the designed controllers across the range of damping ratios.
 
-If you want
------------
-- I can add a short unit test that verifies the symbolic formulas recover Kp, Ki, Kd for the example plant and desired poles.
-- I can inline the derivation as comments inside the top of `GainCalculationWithPP.m` instead of a separate README file.
-
 Completed
 ---------
 I created `GainCalculationWithPP_README.md`. I'll mark the todo as completed when you confirm it's placed where you want it or if you'd like the content adjusted.
