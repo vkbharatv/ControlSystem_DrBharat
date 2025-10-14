@@ -35,12 +35,11 @@ b = den{1}(3);
 zpk(G)
 
 % Desired closed loop pole locations
-omega_n = 2;
-p3 = 15 * omega_n;
+omega_n = 3;
+p3 = 10 * omega_n;
 i = 1;
-
 for eta = 0.5:0.1:1
-  p1 = (eta * omega_n + sqrt(1 - eta ^ 2) * omega_n * 1i);
+    p1 = (eta * omega_n + sqrt(1 - eta ^ 2) * omega_n * 1i);
   p2 = (eta * omega_n - sqrt(1 - eta ^ 2) * omega_n * 1i);
 
   Kp(i, :) = double(subs(Kp_s)); %#ok<*SAGROW>
@@ -59,7 +58,6 @@ for eta = 0.5:0.1:1
   hold on
   step(sys_cl)
   grid on
-
   %%
   % Now let us check the frequency response of the open loop system with the designed PID controller.
   figure(2)
@@ -69,6 +67,8 @@ for eta = 0.5:0.1:1
   [Gm(i, :), Pm(i, :), Wpc(i, :), Wgc(i, :)] = margin(C * G);
   fprintf('Gain Margin: %.2f dB at Frequency: %.2f rad/s\n', db(Gm(i, :)), Wpc(i, :));
   fprintf('Phase Margin: %.2f degrees at Frequency: %.2f rad/s\n', Pm(i, :), Wgc(i, :));
+  fprintf('The closed Loop system for zeta =  %f',zeta_n(i,:))
+  display(zpk(feedback(G*C,1)))
   figure(3), hold on;
   np = nyquistplot(C * G);
   i = i + 1;
@@ -76,15 +76,16 @@ end
 
 legendLabels = arrayfun(@(x) sprintf('\\zeta= %.2f', x), zeta_n, 'UniformOutput', false);
 figure(1), legend(legendLabels, Location = "best"), hold off;
-title('Step Response of the Closed Loop System with PID Controller Designed using Pole Placement Method')
-figure(2), legend(legendLabels, Location = "best"), hold off;
-title('Frequency Response of the Open Loop System with PID Controller Designed using Pole Placement Method');
+title('Step Response')
+figure(2), legend(legendLabels, Location = "eastoutside"), hold off;
+title('Frequency Response');
 figure(3), legend(legendLabels, Location = "best"), hold off;
 np.XLim = [-1.1, 1.1];
 np.YLim = [-1.3, 1.2];
 np.Characteristics.AllStabilityMargins.Visible = 'on';
 grid("on")
-title('Nyquist Plot of the Open Loop System with PID Controller Designed using Pole Placement Method');
+title('Nyquist Plot');
 %%
 tab = table(zeta_n, [p1_n, p2_n, p3_n], Kp, Ki, Kd, Gm, Pm, Wpc, Wgc, ...
   'VariableNames', {'Damping Ratio', 'Desired Closed Loop Poles', 'Kp', 'Ki', 'Kd', 'GM_dB', 'PM_deg', 'w_gc', 'w_pc'})
+
