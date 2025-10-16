@@ -38,8 +38,9 @@ zpk(G)
 omega_n = 3;
 p3 = 10 * omega_n;
 i = 1;
+
 for eta = 0.5:0.1:1
-    p1 = (eta * omega_n + sqrt(1 - eta ^ 2) * omega_n * 1i);
+  p1 = (eta * omega_n + sqrt(1 - eta ^ 2) * omega_n * 1i);
   p2 = (eta * omega_n - sqrt(1 - eta ^ 2) * omega_n * 1i);
 
   Kp(i, :) = double(subs(Kp_s)); %#ok<*SAGROW>
@@ -67,8 +68,8 @@ for eta = 0.5:0.1:1
   [Gm(i, :), Pm(i, :), Wpc(i, :), Wgc(i, :)] = margin(C * G);
   fprintf('Gain Margin: %.2f dB at Frequency: %.2f rad/s\n', db(Gm(i, :)), Wpc(i, :));
   fprintf('Phase Margin: %.2f degrees at Frequency: %.2f rad/s\n', Pm(i, :), Wgc(i, :));
-  fprintf('The closed Loop system for zeta =  %f',zeta_n(i,:))
-  display(zpk(feedback(G*C,1)))
+  fprintf('The closed Loop system for zeta =  %f', zeta_n(i, :))
+  display(zpk(feedback(G * C, 1)))
   figure(3), hold on;
   np = nyquistplot(C * G);
   i = i + 1;
@@ -88,4 +89,3 @@ title('Nyquist Plot');
 %%
 tab = table(zeta_n, [p1_n, p2_n, p3_n], Kp, Ki, Kd, Gm, Pm, Wpc, Wgc, ...
   'VariableNames', {'Damping Ratio', 'Desired Closed Loop Poles', 'Kp', 'Ki', 'Kd', 'GM_dB', 'PM_deg', 'w_gc', 'w_pc'})
-
