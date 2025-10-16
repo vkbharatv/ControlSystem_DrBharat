@@ -6,7 +6,7 @@ C = [0, 1];
 D = 0;
 sys = ss(A, B, C, D)
 
-%% Transfer function to statespace convision in controllable canonical form
+%% Transfer function to statespace convision in Observable canonical form
 
 s = tf('s');
 G = 0.5 / (s ^ 2 + 2 * s + 1)
