@@ -6,17 +6,29 @@ C = [0, 1];
 D = 0;
 sys = ss(A, B, C, D)
 
-%% Transfer function to statespace convision in observable canonical form
+%% Transfer function to statespace convision in controllable canonical form
 
 s = tf('s');
 G = 0.5 / (s ^ 2 + 2 * s + 1)
 sys = ss(G);
-sys_can = canon(sys, 'companion');
-[A_n, B_n, C_n, D_n] = ssdata(sys_can);
-A = A_n'
-B = C_n'
-C = B_n'
-D = D_n
+sys_can = compreal(sys, 'o');
+Q_c = ctrb(sys_can);
+
+if rank(Q_c) == size(A, 1)
+  disp('The system is controllable')
+else
+  disp('The system is not controllable')
+end
+
+Q_o = obsv(sys_can);
+
+if rank(Q_o) == size(A, 1)
+  disp('The system is observable')
+else
+  disp('The system is not observable')
+end
+
+[A, B, C, D] = ssdata(sys_can);
 
 %% Pole placement
 
