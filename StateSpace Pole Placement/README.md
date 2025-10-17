@@ -146,19 +146,19 @@ $$
 With $K_1=[8\;8]$, the closed-loop matrix is
 
 $$
-A_m = \begin{bmatrix}0 & 1\\ -5 & -6\end{bmatrix}.
+A_m = \begin{bmatrix}0 & 1;\\ -5 & -6\end{bmatrix}.
 $$
 
 Solve $A_m z = B$ to get $A_m^{-1}B$:
 
 $$
-A_m^{-1}B = \begin{bmatrix}-0.1\\ 0\end{bmatrix},
+A_m^{-1}B = \begin{bmatrix}-0.1;\\ 0\end{bmatrix},
 $$
 
 so
 
 $$
-C A_m^{-1} B = [1\; 0]\begin{bmatrix}-0.1\\ 0\end{bmatrix} = -0.1.
+C A_m^{-1} B = [1\; 0]\begin{bmatrix}-0.1;\\ 0\end{bmatrix} = -0.1.
 $$
 
 Hence
@@ -201,7 +201,7 @@ For state-feedback and observer design both the controllability and observabilit
 
 - Observability: form the observability matrix
     $$
-    \mathcal{O} = \begin{bmatrix} C \\ C A \end{bmatrix},
+    \mathcal{O} = \begin{bmatrix} C & C A \end{bmatrix}^T,
     $$
     and require rank(𝒪) = 2. If rank(𝒪) < 2 some states cannot be reconstructed from the outputs and you cannot design a full‑state observer.
 
