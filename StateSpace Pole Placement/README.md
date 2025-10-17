@@ -61,8 +61,8 @@ and always check controllability first to avoid surprises.
 1) Example of state space matrice definition in Matlab:
 
 $$
-A = \begin{bmatrix}1 & 0\\ -1 & -1\end{bmatrix},\qquad
-B = \begin{bmatrix}0\\ 1\end{bmatrix},\qquad
+A = \begin{bmatrix}1 & 0;\\ -1 & -1\end{bmatrix},\qquad
+B = \begin{bmatrix}0;\\ 1\end{bmatrix},\qquad
 C = \begin{bmatrix}0 & 1\end{bmatrix},\qquad D = 0.
 $$
 
@@ -79,8 +79,8 @@ $$
 to a **Observable** canononical realization. (Note: Despite the 'o' parameter, `compreal` produces a Observable canonical form.) The Observable canononical form for this second-order system is:
 
 $$
-A = \begin{bmatrix}0 & 1\\ -1 & -2\end{bmatrix},\qquad
-B = \begin{bmatrix}0\\ 0.5\end{bmatrix},\qquad
+A = \begin{bmatrix}0 & 1 ;\\ -1 & -2\end{bmatrix},\qquad
+B = \begin{bmatrix}0 ;\\ 0.5\end{bmatrix},\qquad
 C = \begin{bmatrix}1 & 0\end{bmatrix},\qquad D=0.
 $$
 
@@ -101,8 +101,8 @@ $$
 For the controllable canononical form matrices above:
 
 $$
-A_m = \begin{bmatrix}0 & 1\\ -1 & -2\end{bmatrix} - \begin{bmatrix}0\\ 0.5\end{bmatrix}[k_1\; k_2]
-= \begin{bmatrix}0 & 1\\ -1-0.5k_1 & -2-0.5k_2\end{bmatrix}.
+A_m = \begin{bmatrix}0 & 1; -1 & -2\end{bmatrix} - \begin{bmatrix}0 \;, 0.5\end{bmatrix}^T[k_1\; k_2]
+= \begin{bmatrix}0 & 1; -1-0.5k_1 & -2-0.5k_2\end{bmatrix}.
 $$
 
 The characteristic polynomial of $A_m$ is
