@@ -38,10 +38,10 @@ This repository contains MATLAB and Simulink examples, live scripts, and helper 
 
 ### Python Implementation
 
-The `Python Implementation/` folder contains Jupyter notebooks that replicate the MATLAB examples using Python with control system libraries (such as `python-control`). To use these:
+The `Python Implementation/` folder contains Jupyter notebooks that replicate the MATLAB examples using Python with control system libraries (such as `control`). To use these:
 
 1. Ensure you have Python installed with Jupyter Notebook/Lab.
-2. Install required packages: `pip install numpy scipy matplotlib control-system-python jupyter`
+2. Install required packages: `pip install numpy scipy matplotlib control jupyter`
 3. Navigate to the `Python Implementation/` folder and launch Jupyter: `jupyter notebook`
 4. Open any of the `.ipynb` notebooks and run the cells interactively.
 
