@@ -18,6 +18,13 @@ This repository contains MATLAB and Simulink examples, live scripts, and helper 
    - `PPwithStateSpace.m` (script)
    - `StateSpacePP.mlx` (live script)
    - `README.md`
+- `FeedbackControlwith Observer/` — Feedback control with observer design:
+   - `GainCalculate.mlx` (live script for gain calculations)
+- `Python Implementation/` — Python implementations of control system examples:
+   - `Compensation_Design.ipynb` (Jupyter notebook)
+   - `PID_ControllerDesign.ipynb` (Jupyter notebook)
+   - `stateFeddback_withObserver.ipynb` (Jupyter notebook)
+   - `statespacePolePlacement.ipynb` (Jupyter notebook)
 
 ## Quick start
 
@@ -28,6 +35,15 @@ This repository contains MATLAB and Simulink examples, live scripts, and helper 
     - From the command window: run `run('PIDControllerDesign/GainCalculationWithPP.m')` to execute the PID gain script.
 
 3. If you use Simulink models (not included here), ensure Simulink is installed and licensed.
+
+### Python Implementation
+
+The `Python Implementation/` folder contains Jupyter notebooks that replicate the MATLAB examples using Python with control system libraries (such as `python-control`). To use these:
+
+1. Ensure you have Python installed with Jupyter Notebook/Lab.
+2. Install required packages: `pip install numpy scipy matplotlib control-system-python jupyter`
+3. Navigate to the `Python Implementation/` folder and launch Jupyter: `jupyter notebook`
+4. Open any of the `.ipynb` notebooks and run the cells interactively.
 
 
 ## License / Usage
