@@ -4,7 +4,7 @@ clc, clear, clf;
 syms s Kp Ki Kd a b p1 p2 p3 K
 
 % Let us assume a systeme Transfer function without the PID controller
-G = K / (s ^ 2 + a * s + b);
+G = K / (s ^ 2 + a * s + b); %#ok<NASGU>
 % The characteristic equation of the closed loop system with PID controller
 G_cs = collect((s ^ 2 + a * s + b) * s + K * (Kd * s ^ 2 + Kp * s + Ki), s)
 

@@ -4,7 +4,7 @@ A = [1, 0; -1, -1];
 B = [0; 1];
 C = [0, 1];
 D = 0;
-sys = ss(A, B, C, D)
+sys = ss(A, B, C, D); %#ok<NASGU>
 
 %% Transfer function to statespace convision in Observable canonical form
 
