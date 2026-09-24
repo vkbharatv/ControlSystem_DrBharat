@@ -12,6 +12,7 @@
 *.mexmac
 *.mlappinstall
 *.mlapp
+*.gitignore
 
 # MATLAB project/reported files
 *.mlproj
